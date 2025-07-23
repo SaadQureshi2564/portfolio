@@ -1,26 +1,1174 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* portfolio-container -----------------------------------------------------------------------------------------------*/
+
+
+.portfolio-container{
+  background:linear-gradient(to right, white, #9CEAF1);
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  box-sizing: border-box;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+
+/* Cube Loader -----------------------------------------------------------------------------------------------*/
+
+.cube-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  animation: fadeOut 0.5s ease-in 4s forwards;
+  position: absolute; /* So it's above the rest */
+  top: 0;
+  left: 0;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+
+.cube-loader {
+  width: 75px;
+  height: 75px;
+  transform-style: preserve-3d;
+  transform: rotateX(-30deg);
+  animation: animate 4s linear infinite;
+}
+
+.cube-loader .cube-wrapper {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+    /* top: 0;
+    left: 0; */
+  transform-style: preserve-3d;
+}
+
+.cube-loader .cube-wrapper .cube-span {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+    /* top: 0;
+    left: 0; */
+    /* width 75px / 2 = 37.5px */
+  transform: rotateY(calc(90deg * var(--i))) translateZ(37.5px);
+  background: linear-gradient(to bottom,
+    hsl(270, 100%, 25.1%) 0%,
+    hsl(270, 100%, 32.06%) 5.5%,
+    hsl(270, 100%, 36.88%) 12.1%,
+    hsl(270, 100%, 40.7%) 19.6%,
+    hsl(270, 100%, 43.88%) 27.9%,
+    hsl(270, 100%, 46.58%) 36.6%,
+    hsl(270, 100%, 48.91%) 45.6%,
+    hsl(270, 100%, 50.91%) 54.6%,
+    hsl(270, 100%, 52.62%) 63.4%,
+    hsl(270, 100%, 54.08%) 71.7%,
+    hsl(270, 100%, 55.29%) 79.4%,
+    hsl(270, 100%, 56.28%) 86.2%,
+    hsl(270, 100%, 57.04%) 91.9%,
+    hsl(270, 100%, 57.59%) 96.3%,
+    hsl(270, 100%, 57.93%) 99%,
+    hsl(270, 100%, 58.04%) 100%);
+}
+
+.cube-top {
+  position: absolute;
+  width: 75px;
+  height: 75px;
+  background: hsl(320, 2%, 24%) 0%;
+    /* width 75px / 2 = 37.5px */
+  transform: rotateX(90deg) translateZ(37.5px);
+  transform-style: preserve-3d;
+}
+
+.cube-top::before {
+  content: '';
+  position: absolute;
+    /* u can choose any size */
+  width: 75px;
+  height: 75px;
+  background: hsl(0, 0%, 0%) 19.6%;
+  transform: translateZ(-90px);
+  filter: blur(10px);
+  box-shadow: 0 0 10px #323232,
+        0 0 20px hsl(280, 42%, 41%) 19.6%,
+        0 0 30px #323232,
+        0 0 40px hsl(283, 42%, 41%) 19.6%;
+}
+
+
+
+
+@keyframes animate {
+  0% {
+    transform: rotateX(-30deg) rotateY(0);
+  }
+
+  100% {
+    transform: rotateX(-30deg) rotateY(360deg);
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transform: scale(0.95); /* optional shrink while fading */
+  }
 }
+
+
+
+
+/* Social and History-----------------------------------------------------------------------------------------------*/
+
+.Social-And-History{
+  width: 100%;
+  height: fit-content;
+  margin:10px;
+  padding:10px;
+  display: flex;
+  justify-self: flex-start;
+  align-self: flex-start;
+  flex-direction: row;
+}
+
+@media (max-width: 768px) {
+  .Social-And-History {
+    width: 100%;
+    height: fit-content;
+    border: 2px solid #0a0a0a;
+    margin: 10px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column; /* Stack items vertically on smaller screens */
+  }
+  
+}
+
+/* Social-----------------------------------------------------------------------------------------------*/
+
+
+
+.information-banner{
+  background-color: black;
+  width: fit-content;
+  height: fit-content;
+  padding:10px;
+  width: 42%;
+  display:flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  border-radius: 10px;
+  animation: revealFromLeft 1.5s ease-out 5s forwards;
+  opacity: 0; /* stays hidden before animation starts */
+    
+}
+
+
+
+.banner-items{
+  color:white;
+  display: flex;
+  flex-direction: row;
+
+  
+}
+
+.name-item{
+  font-weight: 500;
+  margin-right: 30px;
+}
+
+.social-icons{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+}
+
+
+@media (max-width: 768px) {
+  .information-banner {
+    width: 100%;
+    padding: 15px;
+    font-size: 14px;
+    font-weight: bold;
+  }
+
+  .banner-items {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .social-icons {
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .name-item {
+    margin-bottom: 20px;
+    text-align: center;
+    align-self: center;
+    margin-left: 10px;
+  }
+}
+
+
+@keyframes revealFromLeft {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+
+
+
+/* History Line -----------------------------------------------------------------------------------------------*/
+
+
+.line-wrapper {
+  width: 60%;
+  height: fit-content;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-start;
+  background: none;
+  justify-content: flex-start;
+
+  
+}
+
+
+.bendy-path {
+  stroke: black;
+  fill: none;
+  stroke-dasharray: 2000;     /* ← increased to cover longer path */
+  stroke-dashoffset: 2000;
+  opacity: 0;
+  animation: drawLine 4s ease-in-out 6.5s forwards, fadeIn 0.5s ease-in 6.5s forwards;
+}
+
+
+@media (max-width: 768px) {
+ 
+  .line-wrapper {
+    width: 100%;
+    height: fit-content;
+    overflow: hidden;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    margin-top: 30%;
+    background: none;
+  }
+
+  .line-wrapper svg {
+    width: 100%; /* Make the SVG responsive */
+    height: auto; /* Maintain aspect ratio */
+    transform: scaleX(1.5); /* Stretch 20% wider */
+  }
+
+  .bendy-path {
+    stroke: black;
+    fill: none;
+    stroke-width: 5;
+    stroke-dasharray: 2000;     /* ← increased to cover longer path */
+    stroke-dashoffset: 2000;
+    opacity: 0;
+    animation: drawLine 4s ease-in-out 6s forwards, fadeIn 0.5s ease-in 6s forwards;
+  }
+}
+
+
+@keyframes drawLine {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+/* History -----------------------------------------------------------------------------------------------*/
+
+
+
+.summary{
+ position: absolute;
+ top:90px;
+ left:40px;
+ max-width: 500px;
+ opacity:0;
+ animation: revealFromLeft 1.5s ease-out 5s forwards;
+}
+
+
+
+.pyramid-loader {
+  width: 100px;
+  height: 100px;
+  perspective: 800px;
+  position: absolute;         /* Changed to absolute for free placement */
+  top: -105px;                  /* Distance from top of the screen */
+  right: 700px; 
+  opacity: 0; /* Start hidden */
+  animation: fadeIn 1s ease-in forwards;
+  animation-delay: 7.75s;
+  
+}
+
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.pyramid-loader .wrapper {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  animation: spinPyramid 5s linear infinite;
+  transform-origin: bottom center; /* Tip becomes rotation pivot */
+}
+
+.pyramid-loader .wrapper .side {
+  width: 20px; /* smaller size */
+  height: 20px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  transform-origin: center top;
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  transform: rotateX(180deg) ; /* updated per side */
+}
+.pyramid-loader .wrapper .side1 {
+  transform: rotateX(180deg) rotateZ(-30deg) rotateY(90deg);
+  background: conic-gradient(#2BDEAC, #F028FD, #D8CCE6, #2F2585);
+}
+.pyramid-loader .wrapper .side2 {
+  transform: rotateX(180deg) rotateZ(30deg) rotateY(90deg);
+  background: conic-gradient(#2F2585, #D8CCE6, #F028FD, #2BDEAC);
+}
+.pyramid-loader .wrapper .side3 {
+  transform: rotateX(180deg) rotateX(30deg);
+  background: conic-gradient(#2F2585, #D8CCE6, #F028FD, #2BDEAC);
+}
+.pyramid-loader .wrapper .side4 {
+  transform: rotateX(180deg) rotateX(-30deg);
+  background: conic-gradient(#2BDEAC, #F028FD, #D8CCE6, #2F2585);
+}
+
+/* Spinning animation */
+@keyframes spinPyramid {
+  0% {
+    transform: rotateX(180deg) rotateY(0deg);
+  }
+  100% {
+    transform: rotateX(180deg) rotateY(360deg);
+  }
+}
+
+
+
+
+.pyramid-loader-2 {
+  width: 100px;
+  height: 100px;
+  perspective: 800px;
+  position: absolute;         /* Changed to absolute for free placement */
+  top: -35px;                  /* Distance from top of the screen */
+  right: 500px; 
+  opacity: 0; /* Start hidden */
+  animation: fadeIn 1s ease-in forwards;
+  animation-delay: 8s;
+}
+
+.pyramid-loader-2 .wrapper-2 {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  animation: spinPyramid 5s linear infinite;
+  transform-origin: bottom center; /* Tip becomes rotation pivot */
+  transform: rotateX(180deg); /* Invert the pyramid */
+}
+
+.pyramid-loader-2 .wrapper-2 .side {
+  width: 20px; /* smaller size */
+  height: 20px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  transform-origin: center top;
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+}
+
+.pyramid-loader-2 .wrapper-2 .side1 {
+  transform: rotateZ(-30deg) rotateY(90deg);
+  background: conic-gradient(#2BDEAC, #F028FD, #D8CCE6, #2F2585);
+}
+.pyramid-loader-2 .wrapper-2 .side2 {
+  transform: rotateZ(30deg) rotateY(90deg);
+  background: conic-gradient(#2F2585, #D8CCE6, #F028FD, #2BDEAC);
+}
+.pyramid-loader-2 .wrapper-2 .side3 {
+  transform: rotateX(30deg);
+  background: conic-gradient(#2F2585, #D8CCE6, #F028FD, #2BDEAC);
+}
+.pyramid-loader-2 .wrapper-2 .side4 {
+  transform: rotateX(-30deg);
+  background: conic-gradient(#2BDEAC, #F028FD, #D8CCE6, #2F2585);
+}
+
+/* Spinning animation */
+@keyframes spinPyramid {
+  0% {
+    transform: rotateX(180deg) rotateY(0deg);
+  }
+  100% {
+    transform: rotateX(180deg) rotateY(360deg);
+  }
+}
+
+
+
+
+.pyramid-loader-3 {
+  width: 100px;
+  height: 100px;
+  perspective: 800px;
+  position: absolute;         /* Changed to absolute for free placement */
+  top: -32px;                  /* Distance from top of the screen */
+  right: 300px; 
+  opacity: 0; /* Start hidden */
+  animation: fadeIn 1s ease-in forwards;
+  animation-delay: 8.25s;
+}
+
+.pyramid-loader-3 .wrapper-3 {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  animation: spinPyramid 5s linear infinite;
+  transform-origin: bottom center; /* Tip becomes rotation pivot */
+ 
+}
+
+.pyramid-loader-3 .wrapper-3 .side {
+  width: 20px; /* smaller size */
+  height: 20px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  transform-origin: center top;
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+}
+
+.pyramid-loader-3 .wrapper-3 .side1 {
+  transform: rotateX(180deg) rotateZ(-30deg) rotateY(90deg);
+  background: conic-gradient(#2BDEAC, #F028FD, #D8CCE6, #2F2585);
+}
+.pyramid-loader-3 .wrapper-3 .side2 {
+  transform: rotateX(180deg) rotateZ(30deg) rotateY(90deg);
+  background: conic-gradient(#2F2585, #D8CCE6, #F028FD, #2BDEAC);
+}
+.pyramid-loader-3 .wrapper-3 .side3 {
+  transform: rotateX(180deg) rotateX(30deg);
+  background: conic-gradient(#2F2585, #D8CCE6, #F028FD, #2BDEAC);
+}
+.pyramid-loader-3 .wrapper-3 .side4 {
+  transform: rotateX(180deg) rotateX(-30deg);
+  background: conic-gradient(#2BDEAC, #F028FD, #D8CCE6, #2F2585);
+}
+
+
+/* Spinning animation */
+@keyframes spinPyramid {
+  0% {
+    transform: rotateX(180deg) rotateY(0deg);
+  }
+  100% {
+    transform: rotateX(180deg) rotateY(360deg);
+  }
+}
+
+
+
+
+
+.pyramid-loader-4 {
+  width: 100px;
+  height: 100px;
+  perspective: 800px;
+  position: absolute;         /* Changed to absolute for free placement */
+  top: 35px;                  /* Distance from top of the screen */
+  right: 100px; 
+  opacity: 0; /* Start hidden */
+  animation: fadeIn 1s ease-in forwards;
+  animation-delay: 8.5s;
+}
+
+.pyramid-loader-4 .wrapper-4 {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  animation: spinPyramid 5s linear infinite;
+  transform-origin: bottom center; /* Tip becomes rotation pivot */
+  transform: rotateX(180deg); /* Invert the pyramid */
+}
+
+.pyramid-loader-4 .wrapper-4 .side {
+  width: 20px; /* smaller size */
+  height: 20px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  transform-origin: center top;
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+}
+
+.pyramid-loader-4 .wrapper-4 .side1 {
+  transform: rotateZ(-30deg) rotateY(90deg);
+  background: conic-gradient(#2BDEAC, #F028FD, #D8CCE6, #2F2585);
+}
+.pyramid-loader-4 .wrapper-4 .side2 {
+  transform: rotateZ(30deg) rotateY(90deg);
+  background: conic-gradient(#2F2585, #D8CCE6, #F028FD, #2BDEAC);
+}
+.pyramid-loader-4 .wrapper-4 .side3 {
+  transform: rotateX(30deg);
+  background: conic-gradient(#2F2585, #D8CCE6, #F028FD, #2BDEAC);
+}
+.pyramid-loader-4 .wrapper-4 .side4 {
+  transform: rotateX(-30deg);
+  background: conic-gradient(#2BDEAC, #F028FD, #D8CCE6, #2F2585);
+}
+
+/* Spinning animation */
+@keyframes spinPyramid {
+  0% {
+    transform: rotateX(180deg) rotateY(0deg);
+  }
+  100% {
+    transform: rotateX(180deg) rotateY(360deg);
+  }
+}
+
+
+.history-2019{
+  position: absolute;
+  top: 80px;                  /* Distance from top of the screen */
+  right: 700px; 
+  font-size: 10px;
+  width: 100px;
+  text-align: center;
+  opacity: 0;
+  animation: fadeIn 1s ease-in forwards;
+  animation-delay: 7.75s;
+ 
+}
+
+.history-2021{
+  position: absolute;
+  top: 40px;
+  right: 500px; 
+  font-size: 10px;
+  width: 100px;
+  opacity: 0;
+  text-align: center;
+  animation: fadeIn 1s ease-in forwards;
+  animation-delay: 8s;
+}
+
+.history-2024{
+  position: absolute;
+  top: 155px;
+  right: 300px; 
+  font-size: 10px;
+  width: 100px;
+  opacity: 0;
+  text-align: center;
+  animation: fadeIn 1s ease-in forwards;
+  animation-delay: 8.25s;
+}
+
+.history-2025{
+  position: absolute;
+  top: 95px;
+  right: 100px;
+  font-size: 10px;
+  width: 100px;
+  opacity: 0;
+  text-align: center;
+  animation: fadeIn 1s ease-in forwards;
+  animation-delay: 8.5s;
+}
+
+
+
+/*Projeects Container---------------------------------------------------------------------*/
+
+
+.project-line{
+  width:100%;
+  height: fit-content;
+  position:absolute;
+  justify-self: end;
+  align-self: flex-end;
+  top:210px;
+  overflow: hidden;
+
+}
+
+.project-line svg {
+  width: 100%; /* Make the SVG responsive */
+  height: auto; /* Maintain aspect ratio */
+ 
+}
+
+.bendy-path-02 {
+  stroke: black;
+  fill: none;
+  stroke-dasharray: 2000;     /* ← increased to cover longer path */
+  stroke-dashoffset: 2000;
+  opacity:0;
+  animation: drawLine 4s ease-in-out 7s forwards, fadeIn 0.5s ease-in 7s forwards;
+}
+
+
+
+
+
+.pyramid-loader-5 {
+  width: 100px;
+  height: 100px;
+  perspective: 800px;
+  position: absolute;
+  top: 200px;
+  left: 10px;
+  opacity: 0;
+  offset-path: path("M 0 240 C 161.4525 220 322.905 260 484.3575 240 C 645.81 220 807.2625 260 968.715 240 C 1130.1675 220 1291.62 260 1453.0725 240");
+  offset-distance: 0%;
+  animation: fadeIn 1s ease-in forwards, followPath 15s ease-in-out 8s forwards;
+  animation-delay: 8.5s;
+}
+
+
+.pyramid-loader-5 .wrapper-5 {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  animation: spinPyramid 5s linear infinite;
+  transform-origin: bottom center; /* Tip becomes rotation pivot */
+  transform: rotateX(180deg); /* Invert the pyramid */
+}
+
+.pyramid-loader-5 .wrapper-5 .side {
+  width: 20px; /* smaller size */
+  height: 20px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  transform-origin: center top;
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+}
+
+.pyramid-loader-5 .wrapper-5 .side1 {
+  transform: rotateZ(-30deg) rotateY(90deg);
+  background: linear-gradient(to bottom right, #1afbf0, #da00ff);
+}
+
+.pyramid-loader-5 .wrapper-5 .side2 {
+  transform: rotateZ(30deg) rotateY(90deg);
+  background: linear-gradient(to bottom right, #1afbf0, #da00ff);
+}
+
+.pyramid-loader-5 .wrapper-5 .side3 {
+  transform: rotateX(30deg);
+  background: linear-gradient(to bottom right, #1afbf0, #da00ff);
+}
+
+.pyramid-loader-5 .wrapper-5 .side4 {
+  transform: rotateX(-30deg);
+  background: linear-gradient(to bottom right, #1afbf0, #da00ff);
+}
+
+.pyramid-loader-5 .wrapper-5 .shadow {
+  width: 60px;
+  height: 60px;
+  background: #8b5ad5;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  transform: rotateX(90deg) translateZ(-40px);
+  filter: blur(12px);
+}
+
+@keyframes followPath {
+  0% {
+    offset-distance: 0%;
+  }
+  100% {
+    offset-distance: 95%;
+  }
+}
+
+
+
+
+.pyramid-loader-6 {
+  width: 100px;
+  height: 100px;
+  perspective: 800px;
+  position: absolute;
+  top: 200px;
+  left: 10px;
+  opacity: 0;
+  offset-path: path("M 0 240 C 161.4525 220 322.905 260 484.3575 240 C 645.81 220 807.2625 260 968.715 240 C 1130.1675 220 1291.62 260 1453.0725 240");
+  offset-distance: 0%;
+  animation: fadeIn 1s ease-in forwards, followPath02 15s ease-in-out 8s forwards;
+  animation-delay: 8.5s;
+}
+
+.pyramid-loader-6 .wrapper-6 {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  animation: spinPyramid 5s linear infinite;
+  transform-origin: bottom center; /* Tip becomes rotation pivot */
+  transform: rotateX(180deg); /* Invert the pyramid */
+}
+
+.pyramid-loader-6 .wrapper-6 .side {
+  width: 20px; /* smaller size */
+  height: 20px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  transform-origin: center top;
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+}
+
+.pyramid-loader-6 .wrapper-6 .side1 {
+  transform: rotateZ(-30deg) rotateY(90deg);
+  background: linear-gradient(to bottom right, #1afbf0, #da00ff);
+}
+
+.pyramid-loader-6 .wrapper-6 .side2 {
+  transform: rotateZ(30deg) rotateY(90deg);
+  background: linear-gradient(to bottom right, #1afbf0, #da00ff);
+}
+
+.pyramid-loader-6 .wrapper-6 .side3 {
+  transform: rotateX(30deg);
+  background: linear-gradient(to bottom right, #1afbf0, #da00ff);
+}
+
+.pyramid-loader-6 .wrapper-6 .side4 {
+  transform: rotateX(-30deg);
+  background: linear-gradient(to bottom right, #1afbf0, #da00ff);
+}
+
+.pyramid-loader-6 .wrapper-6 .shadow {
+  width: 60px;
+  height: 60px;
+  background: #8b5ad5;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  transform: rotateX(90deg) translateZ(-40px);
+  filter: blur(12px);
+}
+
+@keyframes followPath02 {
+  0% {
+    offset-distance: 0%;
+  }
+  100% {
+    offset-distance: 80%;
+  }
+}
+
+
+
+.pyramid-loader-7 {
+  width: 100px;
+  height: 100px;
+  perspective: 800px;
+  position: absolute;
+  top: 200px;
+  left: 10px;
+  opacity: 0;
+  offset-path: path("M 0 240 C 161.4525 220 322.905 260 484.3575 240 C 645.81 220 807.2625 260 968.715 240 C 1130.1675 220 1291.62 260 1453.0725 240");
+  offset-distance: 0%;
+  animation: fadeIn 1s ease-in forwards, followPath03 15s ease-in-out 8s forwards;
+  animation-delay: 8.5s;
+}
+
+
+.pyramid-loader-7 .wrapper-7 {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  animation: spinPyramid 5s linear infinite;
+  transform-origin: bottom center; /* Tip becomes rotation pivot */
+  transform: rotateX(180deg); /* Invert the pyramid */
+}
+
+.pyramid-loader-7 .wrapper-7 .side {
+  width: 20px; /* smaller size */
+  height: 20px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  transform-origin: center top;
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+}
+
+.pyramid-loader-7 .wrapper-7 .side1 {
+  transform: rotateZ(-30deg) rotateY(90deg);
+  background: linear-gradient(to bottom right, #1afbf0, #da00ff);
+}
+
+.pyramid-loader-7 .wrapper-7 .side2 {
+  transform: rotateZ(30deg) rotateY(90deg);
+  background: linear-gradient(to bottom right, #1afbf0, #da00ff);
+}
+
+.pyramid-loader-7 .wrapper-7 .side3 {
+  transform: rotateX(30deg);
+  background: linear-gradient(to bottom right, #1afbf0, #da00ff);
+}
+
+.pyramid-loader-7 .wrapper-7 .side4 {
+  transform: rotateX(-30deg);
+  background: linear-gradient(to bottom right, #1afbf0, #da00ff);
+}
+
+.pyramid-loader-7 .wrapper-7 .shadow {
+  width: 60px;
+  height: 60px;
+  background: #8b5ad5;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  transform: rotateX(90deg) translateZ(-40px);
+  filter: blur(12px);
+}
+
+@keyframes followPath03 {
+  0% {
+    offset-distance: 0%;
+  }
+  100% {
+    offset-distance: 60%;
+  }
+}
+
+
+
+.pyramid-loader-8 {
+  width: 100px;
+  height: 100px;
+  perspective: 800px;
+  position: absolute;
+  top: 200px;
+  left: 10px;
+  opacity: 0;
+  offset-path: path("M 0 240 C 161.4525 220 322.905 260 484.3575 240 C 645.81 220 807.2625 260 968.715 240 C 1130.1675 220 1291.62 260 1453.0725 240");
+  offset-distance: 0%;
+  animation: fadeIn 1s ease-in forwards, followPath04 15s ease-in-out 8s forwards;
+  animation-delay: 8.5s;
+}
+
+
+.pyramid-loader-8 .wrapper-8 {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  animation: spinPyramid 5s linear infinite;
+  transform-origin: bottom center; /* Tip becomes rotation pivot */
+  transform: rotateX(180deg); /* Invert the pyramid */
+}
+
+.pyramid-loader-8 .wrapper-8 .side {
+  width: 20px; /* smaller size */
+  height: 20px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  transform-origin: center top;
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+}
+
+.pyramid-loader-8 .wrapper-8 .side1 {
+  transform: rotateZ(-30deg) rotateY(90deg);
+  background: linear-gradient(to bottom right, #1afbf0, #da00ff);
+}
+
+.pyramid-loader-8 .wrapper-8 .side2 {
+  transform: rotateZ(30deg) rotateY(90deg);
+  background: linear-gradient(to bottom right, #1afbf0, #da00ff);
+}
+
+.pyramid-loader-8 .wrapper-8 .side3 {
+  transform: rotateX(30deg);
+  background: linear-gradient(to bottom right, #1afbf0, #da00ff);
+}
+
+.pyramid-loader-8 .wrapper-8 .side4 {
+  transform: rotateX(-30deg);
+  background: linear-gradient(to bottom right, #1afbf0, #da00ff);
+}
+
+.pyramid-loader-8 .wrapper-8 .shadow {
+  width: 60px;
+  height: 60px;
+  background: #8b5ad5;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  transform: rotateX(90deg) translateZ(-40px);
+  filter: blur(12px);
+}
+
+@keyframes followPath04 {
+  0% {
+    offset-distance: 0%;
+  }
+  100% {
+    offset-distance: 40%;
+  }
+}
+
+
+
+.pyramid-loader-9 {
+  width: 100px;
+  height: 100px;
+  perspective: 800px;
+  position: absolute;
+  top: 200px;
+  left: 10px;
+  opacity: 0;
+  offset-path: path("M 0 240 C 161.4525 220 322.905 260 484.3575 240 C 645.81 220 807.2625 260 968.715 240 C 1130.1675 220 1291.62 260 1453.0725 240");
+  offset-distance: 0%;
+  animation: fadeIn 1s ease-in forwards, followPath05 15s ease-in-out 8s forwards;
+  animation-delay: 8.5s;
+}
+
+
+.pyramid-loader-9 .wrapper-9 {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  animation: spinPyramid 5s linear infinite;
+  transform-origin: bottom center; /* Tip becomes rotation pivot */
+  transform: rotateX(180deg); /* Invert the pyramid */
+}
+
+.pyramid-loader-9 .wrapper-9 .side {
+  width: 20px; /* smaller size */
+  height: 20px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  transform-origin: center top;
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+}
+
+.pyramid-loader-9 .wrapper-9 .side1 {
+  transform: rotateZ(-30deg) rotateY(90deg);
+  background: linear-gradient(to bottom right, #1afbf0, #da00ff);
+}
+
+.pyramid-loader-9 .wrapper-9 .side2 {
+  transform: rotateZ(30deg) rotateY(90deg);
+  background: linear-gradient(to bottom right, #1afbf0, #da00ff);
+}
+
+.pyramid-loader-9 .wrapper-9 .side3 {
+  transform: rotateX(30deg);
+  background: linear-gradient(to bottom right, #1afbf0, #da00ff);
+}
+
+.pyramid-loader-9 .wrapper-9 .side4 {
+  transform: rotateX(-30deg);
+  background: linear-gradient(to bottom right, #1afbf0, #da00ff);
+}
+
+.pyramid-loader-9 .wrapper-9 .shadow {
+  width: 60px;
+  height: 60px;
+  background: #8b5ad5;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  transform: rotateX(90deg) translateZ(-40px);
+  filter: blur(12px);
+}
+
+@keyframes followPath05 {
+  0% {
+    offset-distance: 0%;
+  }
+  100% {
+    offset-distance: 20%;
+  }
+}
+
+
+
+.pyramid-loader-10 {
+  width: 100px;
+  height: 100px;
+  perspective: 800px;
+  position: absolute;
+  top: 200px;
+  left: 10px;
+  opacity: 0;
+  offset-path: path("M 0 240 C 161.4525 220 322.905 260 484.3575 240 C 645.81 220 807.2625 260 968.715 240 C 1130.1675 220 1291.62 260 1453.0725 240");
+  offset-distance: 0%;
+  animation: fadeIn 1s ease-in forwards, followPath06 15s ease-in-out 8s forwards;
+  animation-delay: 8.5s;
+}
+
+
+.pyramid-loader-10 .wrapper-10 {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  animation: spinPyramid 5s linear infinite;
+  transform-origin: bottom center; /* Tip becomes rotation pivot */
+  transform: rotateX(180deg); /* Invert the pyramid */
+}
+
+.pyramid-loader-10 .wrapper-10 .side {
+  width: 20px; /* smaller size */
+  height: 20px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  transform-origin: center top;
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+}
+
+.pyramid-loader-10 .wrapper-10 .side1 {
+  transform: rotateZ(-30deg) rotateY(90deg);
+  background: linear-gradient(to bottom right, #1afbf0, #da00ff);
+}
+
+.pyramid-loader-10 .wrapper-10 .side2 {
+  transform: rotateZ(30deg) rotateY(90deg);
+  background: linear-gradient(to bottom right, #1afbf0, #da00ff);
+}
+
+.pyramid-loader-10 .wrapper-10 .side3 {
+  transform: rotateX(30deg);
+  background: linear-gradient(to bottom right, #1afbf0, #da00ff);
+}
+
+.pyramid-loader-10 .wrapper-10 .side4 {
+  transform: rotateX(-30deg);
+  background: linear-gradient(to bottom right, #1afbf0, #da00ff);
+}
+
+.pyramid-loader-10 .wrapper-10 .shadow {
+  width: 60px;
+  height: 60px;
+  background: #8b5ad5;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  transform: rotateX(90deg) translateZ(-40px);
+  filter: blur(12px);
+}
+
+@keyframes followPath06 {
+  0% {
+    offset-distance: 0%;
+  }
+  100% {
+    offset-distance: 5%;
+  }
+}
+

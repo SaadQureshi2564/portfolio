@@ -1,103 +1,210 @@
-import Image from "next/image";
+import { FaGithub, FaLinkedin, FaFacebook, FaTwitter, FaInstagram } from 'react-icons/fa';
 
 export default function Home() {
-  return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+  
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+  return (
+    <div className=" portfolio-container ">
+      
+      <div
+        className="cube-container">
+          <div className="cube-loader">
+            <div className="cube-top"></div>
+            <div className="cube-wrapper">
+              <span style={{ '--i': 0 } as React.CSSProperties} className="cube-span"></span>
+              <span style={{ '--i': 1 } as React.CSSProperties} className="cube-span"></span>
+              <span style={{ '--i': 2 } as React.CSSProperties} className="cube-span"></span>
+              <span style={{ '--i': 3 } as React.CSSProperties} className="cube-span"></span>
+            </div>
+          </div>
+      </div>
+
+      <div className="Social-And-History">
+        
+        <div className="information-banner">
+          <ul className="banner-items">
+            <li className="name-item">
+              <span>Saad Ahmed Qureshi: Software Engineer</span>
+            </li>
+            <div className="social-icons">
+              <li className="linkedIn">
+                <FaLinkedin className="linkedIn-icon w-7 h-7" />
+              </li>
+              <li className="github">
+                <FaGithub className="github-icon w-7 h-7" />
+              </li>
+              <li className="facebook">
+                <FaFacebook className="facebook-icon w-7 h-7" />
+              </li>
+              <li className="twitter">
+                <FaTwitter className="twitter-icon w-7 h-7" />
+              </li>
+              <li className="instagram">
+                <FaInstagram className="instagram-icon w-7 h-7" />
+              </li>
+            </div>
+          </ul>
+        </div>       
+
+        <div className="summary position-absolute">
+          <p className="summary-description">
+            Computer Science undergraduate with proficiency in C++, Python, 
+            JavaScript, Kotlin, Natural Language Processing and SQL. Developed 
+            mobile and web applications, experienced in data analytics and 
+            skilled in project management and teamwork. 
+          </p>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
+      
+        <div className="line-wrapper">
+          <svg width="990" height="350" viewBox="0 0 990 380" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M -1.4748 20.6492 C 80.424 19.8251 200.8844 14.7252 243.9914 63.4959 C 331.6355 187.785 581.4571 34.4835 682.5811 148.0071 C 772.8662 252.5502 1017.4109 124.3923 1120.5278 232.168"         
+              stroke="black"
+              strokeWidth="2"
+              className="bendy-path"
+            />
+          </svg>
+        </div>
+      </div>
+
+      
+
+      <div className="pyramid-loader">
+        <div className="wrapper">
+          <span className="side side1"></span>
+          <span className="side side2"></span>
+          <span className="side side3"></span>
+          <span className="side side4"></span>
+        </div>
+      </div>
+
+      <div className="pyramid-loader-2">
+        <div className="wrapper-2">
+          <span className="side side1"></span>
+          <span className="side side2"></span>
+          <span className="side side3"></span>
+          <span className="side side4"></span>
+        </div>  
+      </div>
+
+      <div className="pyramid-loader-3">
+        <div className="wrapper-3">
+          <span className="side side1"></span>
+          <span className="side side2"></span>
+          <span className="side side3"></span>
+          <span className="side side4"></span>
+        </div>  
+      </div>
+
+
+      <div className="pyramid-loader-4">
+        <div className="wrapper-4">
+          <span className="side side1"></span>
+          <span className="side side2"></span>
+          <span className="side side3"></span>
+          <span className="side side4"></span>
+        </div>
+      </div>
+
+      <div className="history-2019">
+          <p className="font-bold">2019</p>
+          <p>O-levels</p>
+          <p>BeaconHouse School System</p>
+      </div>
+
+       <div className="history-2021">
+          <p>A-levels</p>
+          <p>BeaconHouse School System</p>
+          <p className="font-bold">2021</p>
+      </div>
+
+      <div className="history-2024">
+        <p className="font-bold">2024</p>
+          <p>Data Analyst Intern  systems Limited</p>
+          
+      </div>
+
+       <div className="history-2025">
+          
+          <p>BSc Computer Science  National University Of Computer 
+            and Emerging Sciences </p>
+            <p className="font-bold">2025</p>
+      </div>
+
+      
+      
+
+      
+      {/* <div className="project-line w-full">
+        <svg viewBox="0 0 2000 500" preserveAspectRatio="none" height="500" width="86.04%">
+          <path d="M 0 240 C 150 220, 300 260, 450 240 C 600 220, 750 260, 900 240 C 1050 220, 1200 260, 1350 240"         
+            stroke="black"
+            strokeWidth="2"
+            className="bendy-path-02"
           />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+        </svg>
+      </div> */}
+
+      
+      <div className="pyramid-loader-5">
+        <div className="wrapper-5">
+          <span className="side side1"></span>
+          <span className="side side2"></span>
+          <span className="side side3"></span>
+          <span className="side side4"></span>
+        </div>
+      </div>
+
+      
+      <div className="pyramid-loader-6">
+        <div className="wrapper-6">
+          <span className="side side1"></span>
+          <span className="side side2"></span>
+          <span className="side side3"></span>
+          <span className="side side4"></span>
+        </div>
+      </div>
+
+      <div className="pyramid-loader-7">
+        <div className="wrapper-7">
+          <span className="side side1"></span>
+          <span className="side side2"></span>
+          <span className="side side3"></span>
+          <span className="side side4"></span>
+        </div>
+      </div>
+
+      <div className="pyramid-loader-8">
+        <div className="wrapper-8">
+          <span className="side side1"></span>
+          <span className="side side2"></span>
+          <span className="side side3"></span>
+          <span className="side side4"></span>
+        </div>  
+      </div>
+
+      <div className="pyramid-loader-9">
+        <div className="wrapper-9">
+          <span className="side side1"></span>
+          <span className="side side2"></span>
+          <span className="side side3"></span>
+          <span className="side side4"></span>
+        </div>
+      </div>
+      <div className="pyramid-loader-10">
+        <div className="wrapper-10">
+          <span className="side side1"></span>
+          <span className="side side2"></span>
+          <span className="side side3"></span>
+          <span className="side side4"></span>
+        </div>
+      </div>
+
+
+
+      
+    
+
+
     </div>
   );
 }
