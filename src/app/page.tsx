@@ -1,4 +1,5 @@
 import { FaGithub, FaLinkedin, FaFacebook, FaTwitter, FaInstagram } from 'react-icons/fa';
+import Image from 'next/image';
 
 export default function Home() {
   
@@ -151,10 +152,11 @@ export default function Home() {
           <span className="side side2"></span>
           <span className="side side3"></span>
           <span className="side side4"></span>
+          
         </div>
       </div>
 
-      
+
       <div className="pyramid-loader-6">
         <div className="wrapper-6">
           <span className="side side1"></span>
@@ -190,6 +192,8 @@ export default function Home() {
           <span className="side side4"></span>
         </div>
       </div>
+
+      
       <div className="pyramid-loader-10">
         <div className="wrapper-10">
           <span className="side side1"></span>
@@ -198,6 +202,86 @@ export default function Home() {
           <span className="side side4"></span>
         </div>
       </div>
+
+
+      <div className="project-container-01">
+        <h2 className="project-title">Transcend</h2>
+        <Image
+            src="/image01.png"       // must start with a slash
+            alt="Project 01"
+            width={200}
+            height={112.5}
+            className="project-image"
+            priority                 // optional: loads this image ASAP for LCP
+          />      
+      </div>
+
+
+      <div className="project-container-02">
+          <h2 className="project-title">ChronoForge</h2>
+          <Image
+            src="/image02.png"       // must start with a slash
+            alt="Project 01"
+            width={200}
+            height={112.5}
+            className="project-image"
+            priority                 // optional: loads this image ASAP for LCP
+          />     
+      </div>
+
+
+      <div className="project-container-03">
+          <h2 className="project-title">VoltDesk</h2>
+         <Image
+            src="/image03.png"       // must start with a slash
+            alt="Project 01"
+            width={200}
+            height={112.5}
+            className="project-image"
+            priority                 // optional: loads this image ASAP for LCP
+          />     
+      </div>
+
+
+      <div className="project-container-04">
+          <h2 className="project-title">DriftNote</h2>
+          <Image
+            src="/image04.png"       // must start with a slash
+            alt="Project 01"
+            width={200}
+            height={112.5}
+            className="project-image"
+            priority                 // optional: loads this image ASAP for LCP
+          />     
+      </div>
+
+
+      <div className="project-container-05">
+          <h2 className="project-title">CoreSync</h2>
+          <Image
+            src="/image05.png"       // must start with a slash
+            alt="Project 01"
+            width={200}
+            height={112.5}
+            className="project-image"
+            priority                 // optional: loads this image ASAP for LCP
+          />     
+      </div>
+
+      <div className="project-container-06">
+          <h2 className="project-title">LumenCode</h2>
+          <Image
+            src="/image06.png"       // must start with a slash
+            alt="Project 01"
+            width={200}
+            height={112.5}
+            className="project-image"
+            priority                 // optional: loads this image ASAP for LCP
+          />     
+      </div>
+
+
+
 
 
 

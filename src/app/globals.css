@@ -686,7 +686,7 @@
   opacity: 0;
   offset-path: path("M 0 240 C 161.4525 220 322.905 260 484.3575 240 C 645.81 220 807.2625 260 968.715 240 C 1130.1675 220 1291.62 260 1453.0725 240");
   offset-distance: 0%;
-  animation: fadeIn 1s ease-in forwards, followPath 15s ease-in-out 8s forwards;
+  animation: fadeIn 1s ease-in forwards, followPath 10s ease-in-out 8s forwards, float 5s ease-in-out infinite;
   animation-delay: 8.5s;
 }
 
@@ -770,8 +770,8 @@
   opacity: 0;
   offset-path: path("M 0 240 C 161.4525 220 322.905 260 484.3575 240 C 645.81 220 807.2625 260 968.715 240 C 1130.1675 220 1291.62 260 1453.0725 240");
   offset-distance: 0%;
-  animation: fadeIn 1s ease-in forwards, followPath02 15s ease-in-out 8s forwards;
-  animation-delay: 8.5s;
+  animation: fadeIn 1s ease-in forwards, followPath02 10s ease-in-out 8s forwards, float 5s ease-in-out infinite;
+  animation-delay: 8.75s;
 }
 
 .pyramid-loader-6 .wrapper-6 {
@@ -836,7 +836,7 @@
     offset-distance: 0%;
   }
   100% {
-    offset-distance: 80%;
+    offset-distance: 77%;
   }
 }
 
@@ -852,8 +852,8 @@
   opacity: 0;
   offset-path: path("M 0 240 C 161.4525 220 322.905 260 484.3575 240 C 645.81 220 807.2625 260 968.715 240 C 1130.1675 220 1291.62 260 1453.0725 240");
   offset-distance: 0%;
-  animation: fadeIn 1s ease-in forwards, followPath03 15s ease-in-out 8s forwards;
-  animation-delay: 8.5s;
+  animation: fadeIn 1s ease-in forwards, followPath03 10s ease-in-out 8s forwards, float 5s ease-in-out infinite;
+  animation-delay: 9s;
 }
 
 
@@ -919,7 +919,7 @@
     offset-distance: 0%;
   }
   100% {
-    offset-distance: 60%;
+    offset-distance: 59%;
   }
 }
 
@@ -935,8 +935,8 @@
   opacity: 0;
   offset-path: path("M 0 240 C 161.4525 220 322.905 260 484.3575 240 C 645.81 220 807.2625 260 968.715 240 C 1130.1675 220 1291.62 260 1453.0725 240");
   offset-distance: 0%;
-  animation: fadeIn 1s ease-in forwards, followPath04 15s ease-in-out 8s forwards;
-  animation-delay: 8.5s;
+  animation: fadeIn 1s ease-in forwards, followPath04 10s ease-in-out 8s forwards, float 5s ease-in-out infinite;
+  animation-delay: 9.25s;
 }
 
 
@@ -1002,7 +1002,7 @@
     offset-distance: 0%;
   }
   100% {
-    offset-distance: 40%;
+    offset-distance: 42%;
   }
 }
 
@@ -1018,8 +1018,8 @@
   opacity: 0;
   offset-path: path("M 0 240 C 161.4525 220 322.905 260 484.3575 240 C 645.81 220 807.2625 260 968.715 240 C 1130.1675 220 1291.62 260 1453.0725 240");
   offset-distance: 0%;
-  animation: fadeIn 1s ease-in forwards, followPath05 15s ease-in-out 8s forwards;
-  animation-delay: 8.5s;
+  animation: fadeIn 1s ease-in forwards, followPath05 10s ease-in-out 8s forwards, float 5s ease-in-out infinite;
+  animation-delay: 9.5s;
 }
 
 
@@ -1085,7 +1085,7 @@
     offset-distance: 0%;
   }
   100% {
-    offset-distance: 20%;
+    offset-distance: 24%;
   }
 }
 
@@ -1101,8 +1101,8 @@
   opacity: 0;
   offset-path: path("M 0 240 C 161.4525 220 322.905 260 484.3575 240 C 645.81 220 807.2625 260 968.715 240 C 1130.1675 220 1291.62 260 1453.0725 240");
   offset-distance: 0%;
-  animation: fadeIn 1s ease-in forwards, followPath06 15s ease-in-out 8s forwards;
-  animation-delay: 8.5s;
+  animation: fadeIn 1s ease-in forwards, followPath06 10s ease-in-out 8s forwards, float 5s ease-in-out infinite;
+  animation-delay: 9.75s;
 }
 
 
@@ -1168,7 +1168,200 @@
     offset-distance: 0%;
   }
   100% {
-    offset-distance: 5%;
+    offset-distance: 7%;
   }
 }
 
+
+
+.project-container-01 {
+  position: absolute;
+  top: 200px;
+  left: 10px;
+  opacity: 0;
+  offset-path: path("M 0 240 C 161.4525 220 322.905 260 484.3575 240 C 645.81 220 807.2625 260 968.715 240 C 1130.1675 220 1291.62 260 1453.0725 240");
+  offset-distance: 0%;
+  animation: fadeIn 1s ease-in forwards, followPath06 10s ease-in-out 8s forwards, float 5s ease-in-out infinite;
+  animation-delay: 9.75s;
+  text-align: center;
+}
+
+.project-title,
+.project-image {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* ✅ This targets the children when the container is hovered */
+.project-container-01:hover .project-title{
+  transform: scale(1.08);
+  z-index: 1;
+  cursor: pointer;
+}
+.project-container-01:hover .project-image {
+  transform: scale(1.08);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+  z-index: 1;
+  cursor: pointer;
+}
+
+
+.project-container-02 {
+  position: absolute;
+  top: 200px; /* position it *above* the pyramid */
+  left: 10px;
+  opacity: 0;
+  offset-path: path("M 0 240 C 161.4525 220 322.905 260 484.3575 240 C 645.81 220 807.2625 260 968.715 240 C 1130.1675 220 1291.62 260 1453.0725 240");
+  offset-distance: 0%;
+  animation: fadeIn 1s ease-in forwards, followPath05 10s ease-in-out 8s forwards, float 5s ease-in-out infinite;
+  animation-delay: 9.5s;
+  text-align: center;
+}
+
+/* ✅ This targets the children when the container is hovered */
+.project-container-02:hover .project-title{
+  transform: scale(1.08);
+  z-index: 1;
+  cursor: pointer;
+}
+.project-container-02:hover .project-image {
+  transform: scale(1.08);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+  z-index: 1;
+  cursor: pointer;
+}
+
+.project-container-03 {
+  position: absolute;
+  top: 200px; /* position it *above* the pyramid */
+  left: 10px;
+  opacity: 0;
+  offset-path: path("M 0 240 C 161.4525 220 322.905 260 484.3575 240 C 645.81 220 807.2625 260 968.715 240 C 1130.1675 220 1291.62 260 1453.0725 240");
+  offset-distance: 0%;
+  animation: fadeIn 1s ease-in forwards, followPath04 10s ease-in-out 8s forwards, float 5s ease-in-out infinite;
+  animation-delay: 9.25s;
+  text-align: center;
+}
+
+/* ✅ This targets the children when the container is hovered */
+.project-container-03:hover .project-title{
+  transform: scale(1.08);
+  z-index: 1;
+  cursor: pointer;
+}
+.project-container-03:hover .project-image {
+  transform: scale(1.08);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+  z-index: 1;
+  cursor: pointer;
+}
+
+.project-container-04 {
+  position: absolute;
+  top: 200px; /* position it *above* the pyramid */
+  left: 10px;
+  opacity: 0;
+  offset-path: path("M 0 240 C 161.4525 220 322.905 260 484.3575 240 C 645.81 220 807.2625 260 968.715 240 C 1130.1675 220 1291.62 260 1453.0725 240");
+  offset-distance: 0%;
+  animation: fadeIn 1s ease-in forwards, followPath03 10s ease-in-out 8s forwards, float 5s ease-in-out infinite;
+  animation-delay: 9s;
+  text-align: center;
+}
+
+/* ✅ This targets the children when the container is hovered */
+.project-container-04:hover .project-title{
+  transform: scale(1.08);
+  z-index: 1;
+  cursor: pointer;
+}
+.project-container-04:hover .project-image {
+  transform: scale(1.08);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+  z-index: 1;
+  cursor: pointer;
+}
+
+.project-container-05 {
+  position: absolute;
+  top: 200px; /* position it *above* the pyramid */
+  left: 10px;
+  opacity: 0;
+  offset-path: path("M 0 240 C 161.4525 220 322.905 260 484.3575 240 C 645.81 220 807.2625 260 968.715 240 C 1130.1675 220 1291.62 260 1453.0725 240");
+  offset-distance: 0%;
+  animation: fadeIn 1s ease-in forwards, followPath02 10s ease-in-out 8s forwards, float 5s ease-in-out infinite;
+  animation-delay: 8.75s;
+  text-align: center;
+}
+
+/* ✅ This targets the children when the container is hovered */
+.project-container-05:hover .project-title{
+  transform: scale(1.08);
+  z-index: 1;
+  cursor: pointer;
+}
+.project-container-05:hover .project-image {
+  transform: scale(1.08);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+  z-index: 1;
+  cursor: pointer;
+}
+
+.project-container-06 {
+  position: absolute;
+  top: 200px; /* position it *above* the pyramid */
+  left: 10px;
+  opacity: 0;
+  offset-path: path("M 0 240 C 161.4525 220 322.905 260 484.3575 240 C 645.81 220 807.2625 260 968.715 240 C 1130.1675 220 1291.62 260 1453.0725 240");
+  offset-distance: 0%;
+  animation: fadeIn 1s ease-in forwards, followPath 10s ease-in-out 8s forwards, float 5s ease-in-out infinite;
+  animation-delay: 8.5s;
+  text-align: center;
+}
+
+/* ✅ This targets the children when the container is hovered */
+.project-container-06:hover .project-title{
+  transform: scale(1.08);
+  z-index: 1;
+  cursor: pointer;
+}
+.project-container-06:hover .project-image {
+  transform: scale(1.08);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+  z-index: 1;
+  cursor: pointer;
+}
+
+
+
+.project-title {
+  font-size: 20px;
+  font-weight: 400;
+  color: black;
+  margin-bottom: 10px;
+  text-align: center;
+  font-family: "Inter", system-ui, sans-serif;
+  /* 🔧 Sharpening and smoothing */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+
+.project-image{
+  width:200px;
+  height:112.5px;
+  border:1px solid black;
+  border-radius: 5px;
+  object-fit: cover;
+}
+
+
+
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px); /* float upward */
+  }
+}
