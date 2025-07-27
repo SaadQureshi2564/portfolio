@@ -1,8 +1,17 @@
+'use client';
+
 import { FaGithub, FaLinkedin, FaFacebook, FaTwitter, FaInstagram } from 'react-icons/fa';
 import Image from 'next/image';
+import React, { useState } from 'react';
 
 export default function Home() {
-  
+
+  const [isDark, setIsDark] = useState(false);
+
+  const toggleTheme = () => {
+    setIsDark(!isDark);
+    document.body.classList.toggle('dark', !isDark);
+  };
 
   return (
     <div className=" portfolio-container ">
@@ -131,159 +140,297 @@ export default function Home() {
             <p className="font-bold">2025</p>
       </div>
 
-      
-      
+        <div className="pyramid-loader-5">
+          <div className="wrapper-5">
+            <span className="side side1"></span>
+            <span className="side side2"></span>
+            <span className="side side3"></span>
+            <span className="side side4"></span>
+          </div>
+        </div> 
 
-      
-      {/* <div className="project-line w-full">
-        <svg viewBox="0 0 2000 500" preserveAspectRatio="none" height="500" width="86.04%">
-          <path d="M 0 240 C 150 220, 300 260, 450 240 C 600 220, 750 260, 900 240 C 1050 220, 1200 260, 1350 240"         
-            stroke="black"
-            strokeWidth="2"
-            className="bendy-path-02"
-          />
-        </svg>
-      </div> */}
-
-      
-      <div className="pyramid-loader-5">
-        <div className="wrapper-5">
-          <span className="side side1"></span>
-          <span className="side side2"></span>
-          <span className="side side3"></span>
-          <span className="side side4"></span>
-          
+        <div className="pyramid-loader-6">
+          <div className="wrapper-6">
+            <span className="side side1"></span>
+            <span className="side side2"></span>
+            <span className="side side3"></span>
+            <span className="side side4"></span>
+          </div>
         </div>
-      </div>
 
-
-      <div className="pyramid-loader-6">
-        <div className="wrapper-6">
-          <span className="side side1"></span>
-          <span className="side side2"></span>
-          <span className="side side3"></span>
-          <span className="side side4"></span>
+        <div className="pyramid-loader-7">
+          <div className="wrapper-7">
+            <span className="side side1"></span>
+            <span className="side side2"></span>
+            <span className="side side3"></span>
+            <span className="side side4"></span>
+          </div>
         </div>
-      </div>
 
-      <div className="pyramid-loader-7">
-        <div className="wrapper-7">
-          <span className="side side1"></span>
-          <span className="side side2"></span>
-          <span className="side side3"></span>
-          <span className="side side4"></span>
+        <div className="pyramid-loader-8">
+          <div className="wrapper-8">
+            <span className="side side1"></span>
+            <span className="side side2"></span>
+            <span className="side side3"></span>
+            <span className="side side4"></span>
+          </div>  
         </div>
-      </div>
 
-      <div className="pyramid-loader-8">
-        <div className="wrapper-8">
-          <span className="side side1"></span>
-          <span className="side side2"></span>
-          <span className="side side3"></span>
-          <span className="side side4"></span>
-        </div>  
-      </div>
-
-      <div className="pyramid-loader-9">
-        <div className="wrapper-9">
-          <span className="side side1"></span>
-          <span className="side side2"></span>
-          <span className="side side3"></span>
-          <span className="side side4"></span>
+        <div className="pyramid-loader-9">
+          <div className="wrapper-9">
+            <span className="side side1"></span>
+            <span className="side side2"></span>
+            <span className="side side3"></span>
+            <span className="side side4"></span>
+          </div>
         </div>
-      </div>
 
-      
-      <div className="pyramid-loader-10">
-        <div className="wrapper-10">
-          <span className="side side1"></span>
-          <span className="side side2"></span>
-          <span className="side side3"></span>
-          <span className="side side4"></span>
+        
+        <div className="pyramid-loader-10">
+          <div className="wrapper-10">
+            <span className="side side1"></span>
+            <span className="side side2"></span>
+            <span className="side side3"></span>
+            <span className="side side4"></span>
+          </div>
         </div>
-      </div>
 
 
-      <div className="project-container-01">
-        <h2 className="project-title">Transcend</h2>
-        <Image
-            src="/image01.png"       // must start with a slash
-            alt="Project 01"
-            width={200}
-            height={112.5}
-            className="project-image"
-            priority                 // optional: loads this image ASAP for LCP
-          />      
-      </div>
-
-
-      <div className="project-container-02">
-          <h2 className="project-title">ChronoForge</h2>
+        <div className="project-container-01">
+          <h2 className="project-title">Transcend</h2>
           <Image
-            src="/image02.png"       // must start with a slash
-            alt="Project 01"
-            width={200}
-            height={112.5}
-            className="project-image"
-            priority                 // optional: loads this image ASAP for LCP
-          />     
-      </div>
+              src="/image01.png"       // must start with a slash
+              alt="Project 01"
+              width={200}
+              height={112.5}
+              className="project-image"
+              priority                 // optional: loads this image ASAP for LCP
+            />      
+        </div>
 
 
-      <div className="project-container-03">
-          <h2 className="project-title">VoltDesk</h2>
-         <Image
-            src="/image03.png"       // must start with a slash
-            alt="Project 01"
-            width={200}
-            height={112.5}
-            className="project-image"
-            priority                 // optional: loads this image ASAP for LCP
-          />     
-      </div>
+        <div className="project-container-02">
+            <h2 className="project-title">ChronoForge</h2>
+            <Image
+              src="/image02.png"       // must start with a slash
+              alt="Project 01"
+              width={200}
+              height={112.5}
+              className="project-image"
+              priority                 // optional: loads this image ASAP for LCP
+            />     
+        </div>
 
 
-      <div className="project-container-04">
-          <h2 className="project-title">DriftNote</h2>
+        <div className="project-container-03">
+            <h2 className="project-title">VoltDesk</h2>
           <Image
-            src="/image04.png"       // must start with a slash
-            alt="Project 01"
-            width={200}
-            height={112.5}
-            className="project-image"
-            priority                 // optional: loads this image ASAP for LCP
-          />     
-      </div>
+              src="/image03.png"       // must start with a slash
+              alt="Project 01"
+              width={200}
+              height={112.5}
+              className="project-image"
+              priority                 // optional: loads this image ASAP for LCP
+            />     
+        </div>
 
 
-      <div className="project-container-05">
-          <h2 className="project-title">CoreSync</h2>
+        <div className="project-container-04">
+            <h2 className="project-title">DriftNote</h2>
+            <Image
+              src="/image04.png"       // must start with a slash
+              alt="Project 01"
+              width={200}
+              height={112.5}
+              className="project-image"
+              priority                 // optional: loads this image ASAP for LCP
+            />     
+        </div>
+
+
+        <div className="project-container-05">
+            <h2 className="project-title">CoreSync</h2>
+            <Image
+              src="/image05.png"       // must start with a slash
+              alt="Project 01"
+              width={200}
+              height={112.5}
+              className="project-image"
+              priority                 // optional: loads this image ASAP for LCP
+            />     
+        </div>
+
+        <div className="project-container-06">
+            <h2 className="project-title">LumenCode</h2>
+            <Image
+              src="/image06.png"       // must start with a slash
+              alt="Project 01"
+              width={200}
+              height={112.5}
+              className="project-image"
+              priority                 // optional: loads this image ASAP for LCP
+            />     
+        </div>
+
+
+
+
+        
+        <div className="pyramid-loader-11">
+          <div className="wrapper-11">
+            <span className="side side1"></span>
+            <span className="side side2"></span>
+            <span className="side side3"></span>
+            <span className="side side4"></span>
+            
+          </div>
+        </div>
+
+
+        <div className="pyramid-loader-12">
+          <div className="wrapper-12">
+            <span className="side side1"></span>
+            <span className="side side2"></span>
+            <span className="side side3"></span>
+            <span className="side side4"></span>
+          </div>
+        </div>
+
+        <div className="pyramid-loader-13">
+          <div className="wrapper-13">
+            <span className="side side1"></span>
+            <span className="side side2"></span>
+            <span className="side side3"></span>
+            <span className="side side4"></span>
+          </div>
+        </div>
+
+        <div className="pyramid-loader-14">
+          <div className="wrapper-14">
+            <span className="side side1"></span>
+            <span className="side side2"></span>
+            <span className="side side3"></span>
+            <span className="side side4"></span>
+          </div>  
+        </div>
+
+        <div className="pyramid-loader-15">
+          <div className="wrapper-15">
+            <span className="side side1"></span>
+            <span className="side side2"></span>
+            <span className="side side3"></span>
+            <span className="side side4"></span>
+          </div>
+        </div>
+
+        
+        <div className="pyramid-loader-16">
+          <div className="wrapper-16">
+            <span className="side side1"></span>
+            <span className="side side2"></span>
+            <span className="side side3"></span>
+            <span className="side side4"></span>
+          </div>
+        </div>
+
+
+        <div className="project-container-07">
+          <h2 className="project-title">Transcend</h2>
           <Image
-            src="/image05.png"       // must start with a slash
-            alt="Project 01"
-            width={200}
-            height={112.5}
-            className="project-image"
-            priority                 // optional: loads this image ASAP for LCP
-          />     
-      </div>
+              src="/image01.png"       // must start with a slash
+              alt="Project 01"
+              width={200}
+              height={112.5}
+              className="project-image"
+              priority                 // optional: loads this image ASAP for LCP
+            />      
+        </div>
 
-      <div className="project-container-06">
-          <h2 className="project-title">LumenCode</h2>
+
+        <div className="project-container-08">
+            <h2 className="project-title">ChronoForge</h2>
+            <Image
+              src="/image02.png"       // must start with a slash
+              alt="Project 01"
+              width={200}
+              height={112.5}
+              className="project-image"
+              priority                 // optional: loads this image ASAP for LCP
+            />     
+        </div>
+
+
+        <div className="project-container-09">
+            <h2 className="project-title">VoltDesk</h2>
           <Image
-            src="/image06.png"       // must start with a slash
-            alt="Project 01"
-            width={200}
-            height={112.5}
-            className="project-image"
-            priority                 // optional: loads this image ASAP for LCP
-          />     
-      </div>
+              src="/image03.png"       // must start with a slash
+              alt="Project 01"
+              width={200}
+              height={112.5}
+              className="project-image"
+              priority                 // optional: loads this image ASAP for LCP
+            />     
+        </div>
 
 
+        <div className="project-container-10">
+            <h2 className="project-title">DriftNote</h2>
+            <Image
+              src="/image04.png"       // must start with a slash
+              alt="Project 01"
+              width={200}
+              height={112.5}
+              className="project-image"
+              priority                 // optional: loads this image ASAP for LCP
+            />     
+        </div>
 
 
+        <div className="project-container-11">
+            <h2 className="project-title">CoreSync</h2>
+            <Image
+              src="/image05.png"       // must start with a slash
+              alt="Project 01"
+              width={200}
+              height={112.5}
+              className="project-image"
+              priority                 // optional: loads this image ASAP for LCP
+            />     
+        </div>
 
+        <div className="project-container-12">
+            <h2 className="project-title">LumenCode</h2>
+            <Image
+              src="/image06.png"       // must start with a slash
+              alt="Project 01"
+              width={200}
+              height={112.5}
+              className="project-image"
+              priority                 // optional: loads this image ASAP for LCP
+            />     
+        </div>
+
+
+        <button
+            onClick={toggleTheme}
+            className={`dark-mode-toggle ${isDark ? 'dark' : 'light'}`}
+          >
+            <Image
+              src={isDark ? '/moon.png' : '/sun.png'}
+              alt={isDark ? 'Dark mode' : 'Light mode'}
+              width={32}
+              height={32}
+            />
+        </button>
+
+        <div className="skills-technology">
+
+        </div>
+
+        <div className="contact-me">
+
+        </div>
+      
 
       
     
